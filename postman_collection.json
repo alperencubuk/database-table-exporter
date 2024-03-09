@@ -1,0 +1,525 @@
+{
+	"info": {
+		"_postman_id": "fefd02ba-ba9e-4f10-aaf6-be911e485778",
+		"name": "Exporter",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6272551"
+	},
+	"item": [
+		{
+			"name": "Export",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"database\": \"test_db\",\r\n    \"table\": \"table1\",\r\n    \"fields\": [\"column1\"],\r\n    \"file_type\": \"csv\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/export",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"export"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Export Csv",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"database\": \"test_db\",\r\n    \"table\": \"table1\",\r\n    \"file_type\": \"csv\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/export",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"export"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "date",
+							"value": "Fri, 08 Mar 2024 18:59:45 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "50"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"task_id\": \"f50f4527-e6bb-4787-9a39-d2cac2d8d43d\"\n}"
+				},
+				{
+					"name": "Export Excel",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"database\": \"test_db\",\r\n    \"table\": \"table1\",\r\n    \"file_type\": \"excel\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/export",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"export"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "date",
+							"value": "Fri, 08 Mar 2024 19:07:01 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "50"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"task_id\": \"75e94264-35c3-403f-8c72-ed90d2b6ad75\"\n}"
+				},
+				{
+					"name": "Not Found",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"database\": \"test_db2\",\r\n    \"table\": \"table1\",\r\n    \"file_type\": \"csv\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/export",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"export"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "date",
+							"value": "Fri, 08 Mar 2024 19:22:13 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "42"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"Database 'test_db2' not found\"\n}"
+				},
+				{
+					"name": "Export with Fields",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"database\": \"test_db\",\r\n    \"table\": \"table1\",\r\n    \"fields\": [\"column1\"],\r\n    \"file_type\": \"csv\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/export",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"export"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "date",
+							"value": "Fri, 08 Mar 2024 19:31:34 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "50"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"task_id\": \"82ec45e6-f774-44ff-bdd3-ea124a38da7c\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Status",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/status/75e94264-35c3-403f-8c72-ed90d2b6ad75",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"status",
+						"75e94264-35c3-403f-8c72-ed90d2b6ad75"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Status",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/status/75e94264-35c3-403f-8c72-ed90d2b6ad75",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"status",
+								"75e94264-35c3-403f-8c72-ed90d2b6ad75"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "date",
+							"value": "Fri, 08 Mar 2024 19:07:59 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "20"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"SUCCESS\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Download",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/download/f50f4527-e6bb-4787-9a39-d2cac2d8d43d.csv",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"download",
+						"f50f4527-e6bb-4787-9a39-d2cac2d8d43d.csv"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Download Csv",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/download/f50f4527-e6bb-4787-9a39-d2cac2d8d43d.csv",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"download",
+								"f50f4527-e6bb-4787-9a39-d2cac2d8d43d.csv"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "date",
+							"value": "Fri, 08 Mar 2024 19:05:22 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-type",
+							"value": "text/csv; charset=utf-8"
+						},
+						{
+							"key": "content-length",
+							"value": "28"
+						},
+						{
+							"key": "last-modified",
+							"value": "Fri, 08 Mar 2024 18:59:45 GMT"
+						},
+						{
+							"key": "etag",
+							"value": "\"34769e6a4a14d4d56769e63ec51abfa5\""
+						}
+					],
+					"cookie": [],
+					"body": "column1,column2\na1,a2\nb1,b2\n"
+				},
+				{
+					"name": "Download Excel",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/download/75e94264-35c3-403f-8c72-ed90d2b6ad75.xlsx",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"download",
+								"75e94264-35c3-403f-8c72-ed90d2b6ad75.xlsx"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "date",
+							"value": "Fri, 08 Mar 2024 19:08:37 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-type",
+							"value": "text/plain; charset=utf-8"
+						},
+						{
+							"key": "content-length",
+							"value": "4845"
+						},
+						{
+							"key": "last-modified",
+							"value": "Fri, 08 Mar 2024 19:07:01 GMT"
+						},
+						{
+							"key": "etag",
+							"value": "\"11ffb588b51c51fe812ea015ff49c50a\""
+						}
+					],
+					"cookie": [],
+					"body": "PK\u0003\u0004\u0014\u0000\u0000\u0000\b\u0000��hXFZ�\f�\u0000\u0000\u0000�\u0000\u0000\u0000\u0010\u0000\u0000\u0000docProps/app.xmlM�M\u000b�0\u0010D�J��nU� 1 ԣ��{H76�dCv��|S���<�0��\u0015�X�#w5�ħ~\u0011�G\u0000�\u000bF�Cө\u0019G%\u001aiX\u001e@�y�\u0013�g�$�\u001b�\u0003`\u0015L3Λ�\u001d�:�\u001c�5�)髷���t�j1(��k�׼\u001f�o�a\u0005���\u0005PK\u0003\u0004\u0014\u0000\u0000\u0000\b\u0000��hX�E���\u0000\u0000\u0000�\u0001\u0000\u0000\u0011\u0000\u0000\u0000docProps/core.xml��MO�0\f��ʔ{�E|DY. N !1\t�-J���i�Ĩݿ'-[\u0007�\u001b��}��V�\t���O�\u0007��bZ���0a��DA\u0000$�G�S��>�[\u001f����;\bڼ�\u001dB��%8$m5i��EX�쨴fQ����\u0002k\u0000;t�S�����\u0012F��l���\u001cS�P�0�C3sy�\n^\u001f\u001f��勶O�{�LIk����G5]\u0014\u000ec'�[Q\u001eg\u0015Ю�\u0004A��kvJ^�ۻ�=S5�/\n�\u0014�zS�\b~%x�6�~�����v���x\u0012(\t��M}\u0002PK\u0003\u0004\u0014\u0000\u0000\u0000\b\u0000��hX�\\�#\u0010\u0006\u0000\u0000�'\u0000\u0000\u0013\u0000\u0000\u0000xl/theme/theme1.xml�Z[s�8\u0014~��xg�m\u000b�6���\u0013siv۴���N\u001f�\u0011X�lyd���G6\u0010˖\r�M��<\u0004,���EG��8y��.b膈��x`�/�ֻ�/��W2$\u0011A0\u0019����\n�L^�Zi\u0000�8}�\u0013\u0012�܂�\bKx\u0014��\\�[\u001a/#����V�il�\u0018Gd`}^,h@�TQZo_ ��\u001f3�\u0015�T�e�\u0001\u0013WA&�����l����>e��:\u001d2�n0\u001bX �o��NZ��T���jg?Vk���H���}�\u0005�I���\u0015\b2\r;:�X�v|��ퟌ��t4m\u001a���x8��ҋp\u001c\u0004�Q���l��A\t��i�d��ڮ����SO��}��h�\n�[O�kw�ӎ�ƭ�x\r��O�î�ƫ�t�i&'��k��\u0016hBF��z\u0012\u0015��@� \u0000Xpv���\u0003�^)�u�\u001a�\u001d��A\\�X�9�\u0011���\u0004�i�\u0019�4Fr��\u0005\u000e\u00007��LP|�A����\\���)�P\u001a\b�ȁ�G�!�ܯ����ɤ3z�}:�k�i�\u0001����ϓ�s�䟧��MB�p�,\t��#[a�'n;\u0013r:\u001cgB|�����%2���\n�N<g\u001fV��]��䞌r#���X}�OGn#ש��\"הF$E��-��\u00118�I\r2\u0013?\b���jP\u001c\u0002�\t1�����Ƭ\u0011�\u0013}��\b�ߍ���o�=W�XIڄ�\u0010F\u001a�s�s�l�\u0007�F��U�ܣ�X\u0015\u0001�\u0018�4�5,��x���<\u001d\u0013\u0012͔\u000b\u0006A��$&\u0012�9~MH\u0013�+�����@�/$�J��i�#�t&��3\u001a�F�\u001bu�h�<z�\u0005��5\n\u001c�\u001b\u001d\u0002g\u001b�F!�i��\u001e�$����\u0011+B>b\u00196\u001ar�\u0016��q��`Z\u0012��xNҴ\u0011�Y�5�>`��͑u�֑\u000e\u0011�^7B>b΋�\u0011�\u001e�8J���qX\u0004��^�I���f��~��3l,��G�\u0017J�\u000f&�?�24\u0007��Y\t��Vj���4>�\u001e2\n\u0005�\u001e>�zx\n7�ƼP��{\u0001���7«���9.}ϥ��=�ҷ7#}g�Ӌ[�Fn[���1��4.(cWr���T��)�9����h>�����$���Y-#\u0016�K��A$�����*�\t�d[%\t�T�e7�\u0012�B\u001bn�S�J��对(�<[�鯡t>,��<_��\u000b3C�rK궔��&8J���pN\u001e�\f;g<�\u001d�w�\u001d5��]v�#�0S�C�\u001aB�\u0003m���:8����\n�R�o����x\u001a�9�\u0004�}�Wm�������Q���<�\u001dǈ�!���C�y{_�g��P4\u0014ml�$,F�`���,\u0014�d`-�\u0007��Q\u0002�RU`1[�\u0003+��|L�E�p�\\_�ђ�ۦe�n�)w\u0019m\"R9�i�\u0013g���e��U\u001d�U[�j=�\u0015N��Y�ȟ\f\u0011N\u0016\u000b\u0012Hc�\u0017�J��\u0019S��+I�U8�E3�\u0012�\u0018����qNS�\u0012v�\u000f\u00022��9�ze1g���-\f\t,[�Y\u0012�M]��盜�z\"v��w�`��p�G\u000f�;�_�]C�~����n�;HL�y�\u0011\u0001tE\u0002#�\u001c\u0006\u0016\u00172�P\u0006\u0013\u0001͔�D�\u0002�d�\u001c���\u000b��\f�)\u0015έ>9E,��N^�%\u0012\u0014��\f\u0005!\u0017r���jw���,�m�T2d�\u0017�C��=3rC�T%��&\u000b���Tͻ\u001a�&`K�zn�-'��^�=�\u0017=F��\u001e��s�z��E��X�\u001e�2�9p�:�\u0003^�\u0013,C�~�}���\u0011�b���O�%�;�{� ���ۤ���\f|ԫZ�d+\u0011?K\u0007|\u001f�\u0006c�[�4_�\u0014b������1\fy�X�\f�f8߇E�\u001a3Ջ�9�\noA�@�?��\rh�\r4\u001c�\u0005^1��6��N\n<���\r��Ď�틿\u0001PK\u0003\u0004\u0014\u0000\u0000\u0000\b\u0000��hX�oN�d\u0001\u0000\u0000#\u0003\u0000\u0000\u0018\u0000\u0000\u0000xl/worksheets/sheet1.xml}S�n�0\f�\u0015�\u000fhh�]T\u0001��i�\u001e&U��=�` j\u0012�Č��ЖuR�\u0013���9vb�\u000e���\u0000\u0014}ke\\�j�f���k��M�\u0001�OJ�Z�Om�]cA\u0014=I+>��[��4,Kzlm�\u0004[R���F��Z؟%(�R6e'`#��z�gI#*�\u0002�5��S>�\u0014R�q\u0012Md�L��t������]B���(\f�C܇�HY\u001cz\u0002\u00059\u0005\t�?_�\u0002������(��L\u0003�<>�?����v��\nՇ,�N�=�\n(E�h��3\u001cg��k�Q��\u0012�]dðY�� X�Bi�%m�z\\z'�rT�6ӄ�o\"@<?R��)��\u0014�\u001d\u0007��`;\u001b�\u0010\u0017\u001dG����\u0007��\b}w�l���\u0019?�ܰ<��VҸHA�U�ɝ\u0002{x�CB��˶C\"�}X�%\u0006\u001b\n�y�HC\u0012�a�/�_PK\u0003\u0004\u0014\u0000\u0000\u0000\b\u0000��hX�\u0005�FR\u0002\u0000\u0000G\n\u0000\u0000\r\u0000\u0000\u0000xl/styles.xml�Vۊ�0\u0010�\u0015�\u000f�����$y�!Ph���C_�XN\u0004����$��j$綛�R�V���9:3g�1Ϊw'ɟ\u000f��䨤������S���\u0003W��`:�=�\u001a����g}g9kz\")�-f�\"SL�t�҃�*�';3h�Ngi�mV����<�\u0001��)��2�N+&EmE\\̔��\u0018_���Hc\u0013��p�S��\u0015\u0017�G������Ɔh\u0016˄G�\u0013\u000b)/*\u0016i\flV\u001ds�[��N$��{l�_N�W���4_|Lo\u0018�����6�޵\u001bC���#�\u0015�C0���Q\u001b�\"�\u0011lo4�Jδ��w\\�g:�\u001f�]�c�č�҄=��ϦW5�1��P��t1����īq�\u0007ߐ\u000e���8�dy+��?�o\u0004\\j\u0007%w�/фFe�~�\u0011�79�AH'��\u001dD�p��;�߱�\u000f�]\u0001���-\u001b�{����j�\u0018TyY�D�����W:�yq�S_L�\u001fyS�����L��ˎW`����\u0002\u0010dE\u0010@\u0004�ZP\u0006dE\u001e��?���}E\u0010*\\>����Ĭ�{\bUᆵ\u0000��\u0017h�,�(��V�c\u0019\u0015�â�\u001fH\b\u0015\u0012\u0007֢j��\u0013\u0003016�\rxʓc\u0003[�\u0018Q����\u0013\u0004��8e\t\u0006\u0000�\"\u000e<\u00148Q$\u0002ԢQ\u0003�<�s�\n�k>\u0001�%�hH��\u0016\u0005ڨ�np^�%��\u0004\u0010�@F�C�^�\t\b� !\u0010���!}�=��߹���q�\u001bPK\u0003\u0004\u0014\u0000\u0000\u0000\b\u0000��hX�G��\u0000\u0000\u0000\u0016\u0002\u0000\u0000\u000b\u0000\u0000\u0000_rels/.rels��Kn\u00021\f@�\u0012e_L��\u00021�ذC�\u000b��磙đc������ h\u0011K���-�\u000f4�v\u001csۥl�0�\\�V5�\u0000�k)`�q�X*5K@-�4����\u0010,��%�-�nַLs�I�\n��s�ew\n\u0014�\u0001��Ú#JCZ�q�3K����\nԚ������5���� ��GEp,���L�v��>�ݾ��cb�x����Ш\u0014=���0����E\t&o��\u0005PK\u0003\u0004\u0014\u0000\u0000\u0000\b\u0000��hX�k�0\u0001\u0000\u0000(\u0002\u0000\u0000\u000f\u0000\u0000\u0000xl/workbook.xml���N�0\fE��\u0007�n�IL�^��I\b\u0010C{�Zw��ĕ�n��'I)L�'���ɽ^��\u000f;�C�a��s.U+����W-X���\u0003\u0017f\r��\u0012Z���4X���ނ�|Z\u0014���hAr��Ϋ��\u001f��\u0018t�[\u0000�f@Y�N-\u0017��W��ˎ\u0004��ST��E8�߅�fG��C��Y��6�2�\u000e-��.U�2���\u0018��D�M�dL�&�`\u000b,X��7������޽�̥�\u0015\u0001� {I\u001b����#�����\b�J\u000b<0�\u001d�}\u0018�E�t��fN[(U�F\u000b�����\u0004�E8�c\u0018��&��\u001a\u001atP?\u0007���\u0010�\n\u0017�%���7��`�7�.h/�t��k<��\u000bPK\u0003\u0004\u0014\u0000\u0000\u0000\b\u0000��hX3�㺭\u0000\u0000\u0000�\u0001\u0000\u0000\u001a\u0000\u0000\u0000xl/_rels/workbook.xml.rels��=\u000e�0\f��\u0012�\u0000\u0018�ԡ\u0002�.�\u0015\u0017���\u0011�D����\u001b�\u0000H\u001d�0Yϖ��dg/4�{;Q�;\u0012�h&�e��\u001e\u0000�;\u001c\u0015E��\u0014&���� }\u000bN�A�\bi\u001c��\u001f\u0019�ȎLQ-\u000e�!ڦ�5>�~�8�\u000f0|�\u001f�Cd)*�[�\\�l�6�Z�(��(�\\��N���\u0012\u0011/\u0006i���z�?�]��W�5�G��!����\u000bPK\u0003\u0004\u0014\u0000\u0000\u0000\b\u0000��hX��B�\u001b\u0001\u0000\u0000�\u0003\u0000\u0000\u0013\u0000\u0000\u0000[Content_Types].xml���N�0\f�_��uj38p@�.�+��\u000b��]��boto�۲J��\r�K����s�%��c\u0004�:g=VyC\u0014\u001f�@Հ�X�\b�#uHN\u0012����R�r\u0007�~�|\u0010*x\u0002O\u0005�\u001a�z��Z�-e�\u001do�\t��\u0013X̳�1�gU���\u001a%�����\u000fJ�E(�r���D\\pB����!�+�T�z����l+\u0013�H�i��\u0002�h\u0001��\u001ag�\fum\u0014���KJ�\t��\u0006��-G��\u00154�a���n`��H��m\n\u0011ٵ\u0004�l髋�B��\\9�d��'��q\r�V8O�#�v�\u0004Ű�\u001f�w�'�[\u001ay\u000f���{֯���O\r��=�?\u0001PK\u0001\u0002\u0014\u0003\u0014\u0000\u0000\u0000\b\u0000��hXFZ�\f�\u0000\u0000\u0000�\u0000\u0000\u0000\u0010\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000�\u0001\u0000\u0000\u0000\u0000docProps/app.xmlPK\u0001\u0002\u0014\u0003\u0014\u0000\u0000\u0000\b\u0000��hX�E���\u0000\u0000\u0000�\u0001\u0000\u0000\u0011\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000�\u0001�\u0000\u0000\u0000docProps/core.xmlPK\u0001\u0002\u0014\u0003\u0014\u0000\u0000\u0000\b\u0000��hX�\\�#\u0010\u0006\u0000\u0000�'\u0000\u0000\u0013\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000�\u0001�\u0001\u0000\u0000xl/theme/theme1.xmlPK\u0001\u0002\u0014\u0003\u0014\u0000\u0000\u0000\b\u0000��hX�oN�d\u0001\u0000\u0000#\u0003\u0000\u0000\u0018\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000��\u000b\b\u0000\u0000xl/worksheets/sheet1.xmlPK\u0001\u0002\u0014\u0003\u0014\u0000\u0000\u0000\b\u0000��hX�\u0005�FR\u0002\u0000\u0000G\n\u0000\u0000\r\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000�\u0001�\t\u0000\u0000xl/styles.xmlPK\u0001\u0002\u0014\u0003\u0014\u0000\u0000\u0000\b\u0000��hX�G��\u0000\u0000\u0000\u0016\u0002\u0000\u0000\u000b\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000�\u0001\"\f\u0000\u0000_rels/.relsPK\u0001\u0002\u0014\u0003\u0014\u0000\u0000\u0000\b\u0000��hX�k�0\u0001\u0000\u0000(\u0002\u0000\u0000\u000f\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000�\u0001\u000b\r\u0000\u0000xl/workbook.xmlPK\u0001\u0002\u0014\u0003\u0014\u0000\u0000\u0000\b\u0000��hX3�㺭\u0000\u0000\u0000�\u0001\u0000\u0000\u001a\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000�\u0001h\u000e\u0000\u0000xl/_rels/workbook.xml.relsPK\u0001\u0002\u0014\u0003\u0014\u0000\u0000\u0000\b\u0000��hX��B�\u001b\u0001\u0000\u0000�\u0003\u0000\u0000\u0013\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000\u0000�\u0001M\u000f\u0000\u0000[Content_Types].xmlPK\u0005\u0006\u0000\u0000\u0000\u0000\t\u0000\t\u0000>\u0002\u0000\u0000�\u0010\u0000\u0000\u0000\u0000"
+				},
+				{
+					"name": "Not Found",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/download/f50f4527-e6bb-4787-9a39-d2cac2d8d43y.csv",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"download",
+								"f50f4527-e6bb-4787-9a39-d2cac2d8d43y.csv"
+							]
+						}
+					},
+					"status": "Not Found",
+					"code": 404,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "date",
+							"value": "Fri, 08 Mar 2024 19:21:53 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "70"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"detail\": \"File 'f50f4527-e6bb-4787-9a39-d2cac2d8d43y.csv' not found\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Health Check",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Health Check",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8000/",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								""
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "date",
+							"value": "Fri, 08 Mar 2024 19:11:09 GMT"
+						},
+						{
+							"key": "server",
+							"value": "uvicorn"
+						},
+						{
+							"key": "content-length",
+							"value": "15"
+						},
+						{
+							"key": "content-type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"health\": true\n}"
+				}
+			]
+		}
+	]
+}

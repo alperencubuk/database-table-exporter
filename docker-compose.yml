@@ -1,0 +1,50 @@
+version: "3.9"
+
+services:
+
+  api:
+    container_name: api
+    build:
+      context: .
+      dockerfile: ./config/dockerfile
+    command: uvicorn source.main:app --host 0.0.0.0 --reload
+    restart: always
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./config/.env
+    volumes:
+      - ./source:/app/source
+      - ./files:/app/files
+
+  celery:
+    container_name: celery
+    build:
+      context: .
+      dockerfile: ./config/dockerfile
+    command: celery -A source.core.celery:celery_app worker --loglevel=info
+    restart: always
+    env_file:
+      - ./config/.env
+    volumes:
+      - ./files:/app/files
+
+  postgres:
+    container_name: postgres
+    image: postgres
+    restart: always
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=database
+      - POSTGRES_HOST=postgres
+      - POSTGRES_PORT=5432
+
+  redis:
+    container_name: redis
+    image: redis
+    restart: always
+    ports:
+      - "6379:6379"
